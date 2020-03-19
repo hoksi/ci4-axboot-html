@@ -1,7 +1,5 @@
 <?php namespace App\Database\Migrations;
 class AddUser extends \CodeIgniter\Database\Migration {
-    const TBL_USER = 'ci4ax_user';
-
     public function up()
     {
         $this->forge->addField([
@@ -23,11 +21,11 @@ class AddUser extends \CodeIgniter\Database\Migration {
 
         $this->forge->addPrimaryKey('cu_idx');
         $this->forge->addKey('user_id');
-        $this->forge->createTable(self::TBL_USER);
+        $this->forge->createTable(TBL_USER);
     }
 
     public function down()
     {
-        $this->forge->dropTable(self::TBL_USER);
+        $this->forge->dropTable(TBL_USER);
     }
 }
